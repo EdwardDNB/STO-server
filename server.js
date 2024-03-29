@@ -3,7 +3,6 @@ const mongoose = require("mongoose");
 
 const movieRoutes = require("./routes/movie-routes");
 
-
 const PORT = 3000;
 const URL = 'mongodb+srv://edvarddnbs:zPS8klVwWyRQwejb@cluster0.ktt6iky.mongodb.net/movie-box?retryWrites=true&w=majority&appName=Cluster0';
 const app = express();
