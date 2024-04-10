@@ -5,6 +5,7 @@ const Task = require('../models/tasks');
 const getTasks= async (req, res) => {
     try {
         const tasks = await Task.find();
+        //res.header("Access-Control-Allow-Origin", "http://localhost:3000");
         res.json(tasks);
     } catch (error) {
         res.status(500).json({ message: error.message });
@@ -40,6 +41,7 @@ const deleteTask = async (req, res) => {
     try {
         await Task.deleteOne({ id: req.params.id }); // или deleteMany(), в зависимости от вашего использования
         res.json({ message: 'Task deleted' });
+
     } catch (error) {
         res.status(500).json({ message: error.message });
     }

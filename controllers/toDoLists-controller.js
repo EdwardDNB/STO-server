@@ -23,6 +23,7 @@ const addToDoList=async (req, res) => {
 const getToDoLists= async (req, res) => {
     try {
         const todolists = await Todolist.find();
+        //res.header("Access-Control-Allow-Origin", "http://localhost:3000");
         res.json(todolists);
     } catch (error) {
         res.status(500).json({ message: error.message });
@@ -40,7 +41,7 @@ const getToDoList= (req, res) => {
 const deleteToDoList= async (req, res) => {
     try {
         await Todolist.deleteOne({ id: req.params.id });
-        res.json({ message: 'Todolist deleted' });
+            res.json({ message: 'Todolist deleted' });
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
